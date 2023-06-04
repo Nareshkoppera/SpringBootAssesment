@@ -10,30 +10,29 @@ Requirements:
 Running Code:
 	1. clone the code into any directory
 	2. head to directory and open the folder in your IDE
-	3. Right click on folder, or src/main/java/com.oaitsetseleng/techassesment/TechnicalAssesmentApplication.java
+	3. Right click on folder, or src/main/java/com.springboot/assessment/SpringBootApplication.java
 	   and select run spring boot app.
 	4. Open your relevant API testing platform and enter the following
 			- url : http://localhost:8080/api/v1/getBill
 			- json data format:
-				{
-					"personId": any 3 digit integer ranging from 100 - 900
-					"Items": [
-						{
-							"name": "The name of the good",
-            				"type": "The type, electronics/groceries/Tools..etc (Please be aware only items written exactly as "groceries" will not be discounted)",
-            				"price": price of good as a decimal (double),
-            				"quantity": the number that is being bought as a whole number (Integer)
-						}
-						{
-							"name": "The name of the good",
-            				"type": "The type, electronics/groceries/Tools..etc (Please be aware only items written exactly as "groceries" will not be discounted)",
-            				"price": price of good as a decimal (double),
-            				"quantity": the number that is being bought as a whole number (Integer)
-						}
-					
-						NB.. This is a list, therefore you can chain one or more in JSON format				
-					] 
-				}
+					{
+						"personId": 100,
+						"items": [
+									{
+										"name": "The name of the good",
+										"type": "groceries",
+										"price": 100.00,
+										"quantity": 10
+                                    },
+								   {
+										"name": "The name of the good",
+										"type": "electronics",
+										"price": 200.00,
+										"quantity": 5
+								   }
+							    ]
+					}				
+
 	5. The response will be in JSON format and will have the following:
 			{
 			    "personId": The ID provided in the POST,
